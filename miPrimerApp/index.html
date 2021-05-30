@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React desde cero</title>
+  </head>
+  <body>
+
+    <h2>Agregar React en un minuto</h2>
+    <p>Esta página demuestra que no se requieren herramientas adicionales para integrar React a una página web</p>
+    <p>React es cargado con una etiqueta script.</p>
+
+    <!-- El componente React será desplegado en el id. -->
+    <div id="like_button_container"></div>
+
+    <!-- Load React. -->
+    <!-- Note: cuando haga paso a producción, reemplace "development.js" por "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" 
+    crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" 
+    crossorigin></script>
+
+    <!-- Carga del componente React -->
+    <script src="like_button.js"></script>
+  </body>
+</html>
