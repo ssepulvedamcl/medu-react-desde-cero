@@ -4,7 +4,7 @@ import Persona from './Persona';
 function App() {
   return (
     <div>    
-      <Persona />
+      <Persona nombre="Juan" edad={18}/>
     </div>
   );
 }
