@@ -2,13 +2,35 @@ import React from 'react';
 import './Persona.css';
 
 class Persona extends React.Component { 
+    constructor(props) { 
+        super(props);
+        this.state = {
+            saludo: ''
+        }
+    }
+
+    /*
+    saludar = () =>{ 
+        this.setState({ saludo: "Hola Mundo :)" });
+    }
+    */
+    saludar(e) {
+        e.preventDefault();
+        this.setState({ saludo: "Hola Mundo :)" });
+    }
+
+    actualizarSaludo = (e) => { 
+        this.setState({saludo: e.target.value })
+    }
+
     render() { 
         return(
             <div>
-                Esta es una persona y es
-                <div style={{ color : 'blue' }}>
-                    {this.props.nombre}
-                </div>
+                <input onChange={this.actualizarSaludo}></input>
+                <button onClick={this.saludar.bind(this)}>
+                    Saludar
+                </button>
+                {this.state.saludo}
             </div>
         )
     }
