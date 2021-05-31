@@ -39,15 +39,12 @@ class Persona extends React.Component {
         } else { 
             mensaje = <p>{ this.state.nombre }, es un niño</p>
         }
-        
+
         return(
             <div>
-                <input onChange={this.actualizarSaludo}></input>
-                <button onClick={this.saludar.bind(this)}>
-                    Saludar
-                </button>
-                { mensaje }
-                { this.state.saludo }
+                <div>Nombre: {this.state.nombre}</div>
+                <div>Edad: {this.state.edad}</div>
+                { mensaje}
             </div>
         )
     }
