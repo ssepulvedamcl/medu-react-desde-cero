@@ -1,5 +1,6 @@
 import './App.css';
 import Persona from './Persona';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   let personas =
@@ -13,9 +14,19 @@ function App() {
   });
 
   return (
-    <div>    
-      { personaJSX }
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/personas">
+          <div>    
+                { personaJSX }
+          </div>
+        </Route>
+        <Route path="/">
+          <div>Bienvenido al ejemplo de personas</div>
+        </Route>
+      </Switch>
+    </BrowserRouter>
+    
   );
 }
 
