@@ -1,8 +1,8 @@
 {
   "personas":[
-    { nombre: "Magdalena", edad: 11 },
-    { nombre: "Clemente", edad: 7   },
-    { nombre: "Santiago", edad: 13  }
+    { "nombre": "Magdalena", "edad": 11 },
+    { "nombre": "Clemente", "edad": 7   },
+    { "nombre": "Santiago", "edad": 13  },
   ],
 
 }
