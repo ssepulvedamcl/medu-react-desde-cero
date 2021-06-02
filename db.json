@@ -1,7 +1,7 @@
 {
   "personas": [
-    { "id": "1", nombre": "Magdalena", "edad": 11 },
-    { "id": "2", "nombre": "Clemente", "edad": 7   },
-    { "id": "3", "nombre": "Santiago", "edad": 13  }
+    { "id": 1, "nombre": "Magdalena", "edad": 11 },
+    { "id": 2, "nombre": "Clemente", "edad": 7   },
+    { "id": 3, "nombre": "Santiago", "edad": 13  }
   ]
 }
