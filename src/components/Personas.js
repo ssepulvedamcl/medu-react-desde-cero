@@ -19,7 +19,9 @@ class Personas extends React.Component {
         return (
         <ul className="list-group">
           {this.state.personas.map((persona) => {
-            return <li className="list-group-item" key={Math.random()*100}>{ persona.nombre } / { persona.edad }</li>
+              return <li
+                  className="list-group-item"
+                  key={Math.random() * 100}>{persona.nombre} / {persona.edad}</li>
         })}    
         </ul>
         )

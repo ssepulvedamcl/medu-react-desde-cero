@@ -37,7 +37,8 @@ class PersonaForm extends React.Component {
             <div>
                 <input id="nombre" ref={ this.nombreInput } />
                 <input id="edad" ref={ this.edadInput } />
-                <button type="submit" id="btnCrearPersona" onClick={this.crearPersona}>
+                <button type="submit" id="btnCrearPersona"
+                    onClick={this.crearPersona}>
                     Enviar
                 </button>
             </div>
