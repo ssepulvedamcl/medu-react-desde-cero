@@ -1,5 +1,6 @@
 import React from 'react';
 import API from '../util/API';
+import { Button, Badge, Spinner } from 'react-bootstrap';
 
 class PersonaForm extends React.Component { 
      constructor(props) { 
@@ -11,10 +12,11 @@ class PersonaForm extends React.Component {
          };
          this.nombreInput = React.createRef();
          this.edadInput = React.createRef();
-         
     }
     
     crearPersona = () => { 
+        this.setState({ creandoPersona: true });
+
         let nombre = this.nombreInput.value;
         let edad = this.edadInput.value;
 
@@ -25,23 +27,50 @@ class PersonaForm extends React.Component {
                 let id = this.state.personas.length + 1;
                 console.log(this.state.personas);
                 API.post("/personas", { "id": id, "nombre": nombre, "edad": edad })
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
+                    .then(res => { 
+                        console.log(res);
+                        setTimeout(() => {
+                            this.setState({ creandoPersona: false }); 
+                        }, 5000);
+                    })
+                    .catch(err => console.log(err));
         });
-        
-       
     }
 
     render() { 
         return (
-            <div>
-                <input id="nombre" ref={ this.nombreInput } />
-                <input id="edad" ref={ this.edadInput } />
-                <button type="submit" id="btnCrearPersona"
-                    onClick={this.crearPersona}>
-                    Enviar
-                </button>
-            </div>
+            <>
+                {this.state.creandoPersona ?  
+                    <Spinner animation="border" role="status">
+                    </Spinner>
+                    :
+                    <>
+                        <h1>
+                            Creación de registro de persona
+                        <Badge bg="secondary">
+                            Nueva
+                        </Badge>
+                        </h1>
+                            <div>   
+                            <label>
+                                    Nombre:
+                                    <input id="nombre" ref={this.nombreInput} />
+                            </label>
+                            <label>
+                                    Edad:
+                                    <input id="edad" ref={ this.edadInput } />
+                            </label>
+                            
+                            <Button variant="primary"
+                                type="submit"
+                                id="btnCrearPersona"
+                                onClick={this.crearPersona}>
+                                    Enviar
+                            </Button>
+                            </div>
+                    </>
+                }
+            </>
         )
     }
 }
