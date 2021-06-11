@@ -32,6 +32,7 @@ class PersonaForm extends React.Component {
                         setTimeout(() => {
                             this.setState({ creandoPersona: false }); 
                         }, 5000);
+                        this.props.personaCreadaEvent();
                     })
                     .catch(err => console.log(err));
         });
